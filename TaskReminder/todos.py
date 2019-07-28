@@ -9,9 +9,10 @@ links = []
 with open(const.PATH) as f:
     lines = f.readlines()
     for i in lines:
+        if len(todos) >= const.SET_MAX or len(links) >= const.SET_MAX: break
         if i.startswith(const.HEADER_TODO):
             todos.append(i.replace(const.HEADER_TODO, ''))
-        if i.startswith(const.HEADER_TODO):
+        if i.startswith(const.HEADER_LINK):
             links.append(i.replace(const.HEADER_LINK, ''))
 
 def getTodos():
