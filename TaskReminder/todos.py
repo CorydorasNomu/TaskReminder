@@ -6,7 +6,7 @@ todos = []
 links = []
 
 # Parse todo file
-with open(const.PATH) as f:
+with open(const.PATH, 'r', encoding = 'utf-8') as f:
     lines = f.readlines()
     for i in lines:
         if len(todos) >= const.SET_MAX or len(links) >= const.SET_MAX: break

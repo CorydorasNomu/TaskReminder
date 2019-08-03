@@ -1,5 +1,4 @@
-
-# -*- coding: utf8 -*-
+# coding: utf-8
 import sys
 import tkinter as tk
 import tkinter.messagebox as msgbox
@@ -37,10 +36,12 @@ for i in range(const.SET_MAX):
 
 labels = todos.getTodos()
 for i in range(len(labels)):
+    print(labels[i])
     boxes.append(tk.Checkbutton(
             text = labels[i],
             font = (const.FONT_STYLE, const.FONT_SIZE),
-            variable = vals[i]
+            variable = vals[i],
+            height = 2
         ).place(x = 10, y = i*30))
 
 # リンクボタン
@@ -52,7 +53,8 @@ for i in range(len(links)):
                 text = const.LINK,
                 width = 10,
                 font = (const.FONT_STYLE, const.FONT_SIZE),
-                command = clicked(links[i]))
+                command = clicked(links[i])
+            )
         buttons.append(link)
         buttons[i].pack()
         buttons[i].place(x=300, y=i*30)

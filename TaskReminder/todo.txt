@@ -1,11 +1,11 @@
-[todo]hogehoge
+[todo]ヤフー
 [link]https://www.yahoo.co.jp
 
-[todo]hugahuga
-[link]https://www.yahoo.co.jp
+[todo]グーグル
+[link]https://www.google.co.jp
 
-[todo]piyppiyo
+[todo]なにもなし
 [link]
 
-[todo]日本語日本語ですよ
-[link]https://www.yahoo.co.jp
+[todo]ユーチューブ
+[link]https://www.youtube.com
