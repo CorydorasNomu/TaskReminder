@@ -1,0 +1,14 @@
+[todo]今日の支出を計算する。
+[link]
+
+[todo]今日のニュースをチェックする。(BBC)
+[link]https://www.bbc.com/japanese
+
+[todo]今日のニュースをチェックする。(CNN)
+[link]https://www.cnn.co.jp/
+
+[todo]今日のツイートをチェックする。
+[link]https://www.twitter.com
+
+[todo]翌日の予定を確認する。
+[link]

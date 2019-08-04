@@ -6,7 +6,7 @@ WINDOW_TITLE = '今日のタスク'
 SCREEN_SIZE = '400x200'
 
 # Path
-PATH = './todo.txt'
+PATH = '../todo.txt'
 
 # Text code
 UTF_8 = 'utf-8'
