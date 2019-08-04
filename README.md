@@ -4,13 +4,13 @@
 - 各項目には任意のウェブサイトやディレクトリパスをリンク先として指定することもできる。
 - リンク先を指定した場合は、リンク先を開くためのボタンがウィンドウに追加される。
 - 確定ボタンあるいはウィンドウの閉じるボタンを押下することでウィンドウを閉じる。  
-<img src="./resources/window.png" width=350>
+<img src="./resources/window.png" width=350>  
 - ただし表示されているすべての項目のチェックボックスにチェックが入っていない状態で  
   確定ボタンを押下しても、エラーメッセージが表示されアプリを終了できない。  
-<img src="./resources/confirm_err.png" width=350>
+<img src="./resources/confirm_err.png" width=350>  
 - また、ウィンドウ右上のXボタンでアプリを終了させようとした場合も同様の動作となる。
 - タスクが未完了のまま上記の方法でアプリを終了させようとすると、かなり煽られる。  
-<img src="./resources/close_err.png" width=350>
+<img src="./resources/close_err.png" width=350>  
 
 ## 利用方法
 1. todo.txtにリマインド項目およびリンク先を記載する。
