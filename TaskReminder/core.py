@@ -6,28 +6,32 @@ import webbrowser
 import const
 import todos
 
-vals  = [] # Object for verifying if box is checked
-boxes = [] # Checkbox components
-buttons = []
+vals  = []   # チェックボックスのON/OF
+boxes = []   # チェックボックス
+buttons = [] # リンクボタン
 
-# すべてのTODO項目が完了しているかを確認
-def check(event):
-    sum = 0
-    for i in range(len(todos.getTodos())):
-        if vals[i].get(): sum += 1
-    if sum < len(todos.getTodos()): msgbox.showerror(const.DLG_TITLE, const.DLG_MSG)
-    else: return
+# 初期設定
+root = tk.Tk()                   # tkinter
+root.title(const.WINDOW_TITLE)   # タイトル
+root.geometry(const.SCREEN_SIZE) # 画面
+
+# すべてのタスクが完了しているか確認
+def check(msg):
+    def x():
+        sum = 0
+        for i in range(len(todos.getTodos())):
+            if vals[i].get(): sum += 1
+        if sum < len(todos.getTodos()):
+            msgbox.showerror(const.DLG_TITLE, msg)
+        else:
+            root.destroy()
+    return x
 
 # クリックイベント
 def clicked(url):
     def x():
        webbrowser.open_new(url)
     return x
-
-# 初期設定
-root = tk.Tk()                   # tkinter
-root.title(const.WINDOW_TITLE)   # タイトル
-root.geometry(const.SCREEN_SIZE) # 画面
 
 # チェックボックス
 for i in range(const.SET_MAX):
@@ -36,13 +40,14 @@ for i in range(const.SET_MAX):
 
 labels = todos.getTodos()
 for i in range(len(labels)):
-    print(labels[i])
-    boxes.append(tk.Checkbutton(
+    b = tk.Checkbutton(
             text = labels[i],
             font = (const.FONT_STYLE, const.FONT_SIZE),
             variable = vals[i],
             height = 2
-        ).place(x = 10, y = i*30))
+        )
+    b.place(x = 10, y = i*30)
+    boxes.append(b)
 
 # リンクボタン
 links = todos.getLinks()
@@ -56,7 +61,6 @@ for i in range(len(links)):
                 command = clicked(links[i])
             )
         buttons.append(link)
-        buttons[i].pack()
         buttons[i].place(x=300, y=i*30)
     else:
         buttons.append('Enpty')
@@ -67,9 +71,10 @@ confirm = tk.Button(
     text = const.CONFIRM,
     width=10,
     font = (const.FONT_STYLE, const.FONT_SIZE),
-    command=root.destroy
+    command = check(const.DLG_CONFIRM_MSG)
 )
-confirm.bind('<Button-1>', check)
 confirm.place(x = 150, y = 160)
+
+root.protocol('WM_DELETE_WINDOW', check(const.DLG_CLOSING_MSG))
 
 root.mainloop()
